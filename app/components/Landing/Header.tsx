@@ -153,11 +153,7 @@ export default function Header() {
                 <Link 
                   href="/signin" 
                   className="px-4 py-2 text-sm rounded-full bg-black text-white hover:bg-gray-800 transition-colors"
-                  onClick={() => {
-                    setToastMessage('Redirecting to sign in page...');
-                    setToastType('info');
-                    setShowToast(true);
-                  }}
+                  
                 >
                   Sign In
                 </Link>
@@ -165,11 +161,7 @@ export default function Header() {
                 <Link 
                   href="/signup" 
                   className="px-4 py-2 text-sm rounded-full bg-black text-white hover:bg-gray-800 transition-colors"
-                  onClick={() => {
-                    setToastMessage('Redirecting to sign up page...');
-                    setToastType('info');
-                    setShowToast(true);
-                  }}
+                  
                 >
                   Sign Up
                 </Link>

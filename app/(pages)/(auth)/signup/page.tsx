@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 import { createBrowserClient } from '@supabase/ssr';
 
-export default function SignUp() {
+// Client component that contains all the state and logic
+const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -95,14 +96,11 @@ export default function SignUp() {
   };
 
   const handleGoogleSignIn = () => {
-    setToastType('info');
-    setToastMessage('Redirecting to Google for sign-up...');
-    setShowToast(true);
     signIn('google', { callbackUrl: '/chats' });
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <>
       {/* Toast notification */}
       {showToast && (
         <div className={`fixed top-5 right-5 p-4 rounded shadow-lg z-50 ${
@@ -140,23 +138,6 @@ export default function SignUp() {
         </div>
       )}
 
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <Link href="/">
-          <h2 className="text-center text-3xl font-extrabold text-gray-900">
-            <span className="font-medium">Periskope</span>
-          </h2>
-        </Link>
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Create a new account
-        </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
-          Or{' '}
-          <Link href="/signin" className="font-medium text-black hover:text-gray-800">
-            sign in to your account
-          </Link>
-        </p>
-      </div>
-
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSubmit}>
@@ -179,7 +160,7 @@ export default function SignUp() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm text-black"
                 />
               </div>
             </div>
@@ -197,7 +178,7 @@ export default function SignUp() {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm text-black"
                 />
               </div>
             </div>
@@ -215,7 +196,7 @@ export default function SignUp() {
                   required
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm text-black"
                 />
               </div>
             </div>
@@ -261,6 +242,39 @@ export default function SignUp() {
           </div>
         </div>
       </div>
+    </>
+  );
+};
+
+export default function SignUp() {
+  return (
+    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md">
+        <Link href="/">
+          <h2 className="text-center text-3xl font-extrabold text-gray-900">
+            <span className="font-medium">Periskope</span>
+          </h2>
+        </Link>
+        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          Create a new account
+        </h2>
+        <p className="mt-2 text-center text-sm text-gray-600">
+          Or{' '}
+          <Link href="/signin" className="font-medium text-black hover:text-gray-800">
+            sign in to your account
+          </Link>
+        </p>
+      </div>
+      
+      <Suspense fallback={
+        <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+          <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 flex justify-center">
+            <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-black"></div>
+          </div>
+        </div>
+      }>
+        <SignUpForm />
+      </Suspense>
     </div>
   );
 } 
