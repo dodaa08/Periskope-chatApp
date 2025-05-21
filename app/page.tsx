@@ -1,8 +1,10 @@
-export default function(){
+import Landing from "./(pages)/Landing/page"
+
+export default function Home() {
   return(
     <>
-    <div>
-      <h1>woring</h1>
+    <div className="bg-white h-screen">
+      <Landing />
     </div>
     </>
   )
