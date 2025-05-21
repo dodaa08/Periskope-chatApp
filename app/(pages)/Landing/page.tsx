@@ -15,7 +15,7 @@ export default function Landing() {
           <Features />
         </div>
         <div className="mt-20">
-          <Howitworks />
+          <Howitworks />  
         </div>
         {/* <div className="mt-20">
           <Pricing />
