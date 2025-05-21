@@ -11,15 +11,15 @@ export default function Landing() {
       <Header />
       <main>
         <Hero />
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <Features />
-        </div>
+        </div> */}
         <div className="mt-20">
           <Howitworks />
         </div>
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <Pricing />
-        </div>
+        </div> */}
         {/* Add more landing page sections here as needed */}
       </main>
       <Footer />

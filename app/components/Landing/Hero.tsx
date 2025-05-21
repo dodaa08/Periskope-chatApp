@@ -167,15 +167,15 @@ export default function Hero() {
                     transition={{ delay: 1.0, duration: 0.7 }}
                 >
                     <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
-                        <p className="text-3xl font-medium">99.9%</p>
+                        <p className="text-3xl text-gray-400 font-medium">99.9%</p>
                         <p className="text-sm text-gray-500">Uptime</p>
                     </motion.div>
                     <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
-                        <p className="text-3xl font-medium">5000+</p>
+                        <p className="text-3xl text-gray-400 font-medium">5000+</p>
                         <p className="text-sm text-gray-500">Active users</p>
                     </motion.div>
                     <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
-                        <p className="text-3xl font-medium">10000+</p>
+                        <p className="text-3xl text-gray-400 font-medium">10000+</p>
                         <p className="text-sm text-gray-500">Messages sent daily</p>
                     </motion.div>
                 </motion.div>
