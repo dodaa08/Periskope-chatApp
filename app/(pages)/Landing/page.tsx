@@ -11,9 +11,9 @@ export default function Landing() {
       <Header />
       <main>
         <Hero />
-        {/* <div className="mt-20">
+        <div className="mt-20">
           <Features />
-        </div> */}
+        </div>
         <div className="mt-20">
           <Howitworks />
         </div>
