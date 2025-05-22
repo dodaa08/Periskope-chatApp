@@ -3,7 +3,9 @@ import Hero from "@/app/components/Landing/Hero"
 import Features from "@/app/components/Landing/Features"
 import Howitworks from "@/app/components/Landing/Howitworks"
 import Pricing from "@/app/components/Landing/Pricing"
-import Footer from "@/app/components/Landing/Footer"
+import Footer from "@/app/components/Landing/Footer";
+
+
 
 export default function Landing() {
   return (
