@@ -205,7 +205,7 @@ export default function Chat() {
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         placeholder="Message..."
-                        className="flex-grow py-2 px-2 text-sm border-none outline-none"
+                        className="flex-grow text-gray-500 py-2 px-2 text-sm border-none outline-none"
                         onKeyPress={(e) => e.key === 'Enter' && handleSend()}
                     />
                     

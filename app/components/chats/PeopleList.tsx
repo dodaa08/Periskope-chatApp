@@ -109,7 +109,7 @@ export default function PeopleList() {
     ];
 
     return (
-        <div className="h-full flex flex-col bg-white">
+        <div className="h-screen flex flex-col bg-white">
             {/* Filter and search bar */}
             <div className="p-2 border-b border-gray-200">
                 <div className="flex items-center gap-2 mb-2">

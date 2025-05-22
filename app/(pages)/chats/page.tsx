@@ -21,11 +21,10 @@ export default function ChatsPage() {
           <Sidebar />
         </div>
         
-        {/* Main layout - the columns */}
+        {/* Main content with people list and chat */}
         <div className="flex flex-grow h-full overflow-hidden">
           {/* Left column with conversation list */}
-          <div className="w-[350px] flex-shrink-0 h-full border-r border-gray-100 overflow-hidden flex flex-col">
-            {/* Conversation list */}
+          <div className="w-[350px] flex-shrink-0 h-screen border-r border-gray-100 overflow-hidden">
             <div className="flex-grow overflow-hidden">
               <PeopleList />
             </div>
@@ -35,11 +34,11 @@ export default function ChatsPage() {
           <div className="flex-grow h-full overflow-hidden">
             <Chat />
           </div>
-          
-          {/* Right sidebar with contact details */}
-          {/* <div className="w-[350px] flex-shrink-0 h-full border-l border-gray-100 overflow-hidden">
-            <RightSidebar />
-          </div> */}
+        </div>
+        
+        {/* Right sidebar with vertical icons */}
+        <div className="flex-shrink-0 h-full">
+          <RightSidebar />
         </div>
       </div>
     </div>
