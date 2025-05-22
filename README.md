@@ -1,6 +1,6 @@
 # Periskope ChatApp assignment
 
-A full-stack, real-time chat application built using **Next.js (TypeScript)**, **Tailwind CSS**, and **Supabase**. This project replicates a pixel-perfect UI from a given screenshot and implements live messaging features between users with support for authentication and dynamic conversation threads.
+A full-stack, real-time chat application built using **Next.js (TypeScript)**, **Tailwind CSS**, and **Supabase**. 
 
 ---
 
