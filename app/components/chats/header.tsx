@@ -12,17 +12,11 @@ export default function Header() {
     return (
         <header className="bg-white py-2 px-4 flex items-center justify-between">
             {/* Left side with chat icon and chats text */}
-            <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1.5">
-                    <div className="text-gray-500 flex items-center">
-                        <IoChatbubbleOutline className="text-lg" />
-                    </div>
-                    <span className="text-sm text-gray-600">Chats</span>
-                </div>
-               
+            <div className="flex items-center">
+                <img src="https://framerusercontent.com/images/ywGyuWgLKzqyB4QJ1sw5Nk1mckU.svg?scale-down-to=512" alt="Logo" className="w-72 h-8 object-contain" />
+                <span className="text-sm font-medium text-gray-600 -ml-32">Chats</span>
             </div>
             
-           
             
             {/* Right side with action buttons */}
             <div className="flex items-center gap-1.5">
