@@ -35,7 +35,7 @@ export default function ChatLayout({ children }: ChatLayoutProps) {
                 <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-16">
                         <div className="flex">
-                            <Link href="/" className="flex-shrink-0 flex items-center">
+                            <Link href="/" className="flex-shrink-0 text-2xl font-bold text-blue-500 flex items-center">
                                 <h1 className="text-xl font-bold">Periskope</h1>
                             </Link>
                         </div>
@@ -47,7 +47,7 @@ export default function ChatLayout({ children }: ChatLayoutProps) {
                                         <span className="mr-2 text-sm text-gray-700">
                                             {(session.user as any)?.name || session.user.email}
                                         </span>
-                                        <div className="h-8 w-8 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-white">
+                                        <div className="h-8 w-8  flex items-center justify-center text-white">
                                             {(session.user as any)?.name ? (session.user as any).name.charAt(0).toUpperCase() : '?'}
                                         </div>
                                     </div>

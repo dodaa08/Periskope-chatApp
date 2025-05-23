@@ -8,6 +8,8 @@ import PeopleList from '@/app/components/chats/PeopleList';
 export default function ChatsPage() {
     const router = useRouter();
     const { status } = useSession();
+
+
     
     // Redirect if not authenticated
     useEffect(() => {
@@ -54,3 +56,4 @@ export default function ChatsPage() {
 }
 
 // focus a little on sound and animation and pixel perfect design 
+
